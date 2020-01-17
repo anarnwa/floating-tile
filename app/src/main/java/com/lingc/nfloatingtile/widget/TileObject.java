@@ -38,8 +38,8 @@ public class TileObject {
         showTileNum = 0;
         positionArray.clear();
         for (FloatingTile floatingTile : showingFloatingTileList) {
-            floatingTile.removeView();
-            floatingTile.showWaitingTile();
+                floatingTile.removeView();
+                floatingTile.showWaitingTile();
         }
         showingFloatingTileList.clear();
 //        for (int i = 0; i < positionArray.size(); i++) {

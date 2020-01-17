@@ -39,7 +39,9 @@ public class FloatingTile {
     private boolean isOpen;
     private FloatingTile lastTile;
     public boolean isRemove;
-    private View view;
+    public View view;
+    private boolean stop=false;
+    public  boolean beclose=true;
 
     public void setLastTile(FloatingTile lastTile) {
         this.lastTile = lastTile;
@@ -67,9 +69,14 @@ public class FloatingTile {
         ImageView imageView = view.findViewById(R.id.window_icon_img);
         final TextView titleText = view.findViewById(R.id.window_title_text);
         final TextView contentText = view.findViewById(R.id.window_content_text);
+        messageLay.setVisibility(View.VISIBLE);
+        titleText.setText(title);
+        contentText.setText(content);
+        isOpen=!isOpen;
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (isOpen) {
                     messageLay.setVisibility(View.GONE);
                 } else {
@@ -87,6 +94,8 @@ public class FloatingTile {
                 layoutParams.height = viewHeight;
                 windowManager.updateViewLayout(v, layoutParams);
                 isOpen = !isOpen;
+                beclose=false;
+                TileObject.showingFloatingTileList.remove(FloatingTile.this);
             }
         });
         view.setOnLongClickListener(new View.OnLongClickListener() {

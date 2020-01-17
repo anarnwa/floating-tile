@@ -29,6 +29,13 @@
         android:defaultValue="6"
         android:title="磁贴数量" />
 
+    <EditTextPreference
+        android:key="tileShowTime"
+        android:summary="通知几秒后隐藏,0则不隐藏,\n注意：被点击过的通知无论何时都不会自动隐藏！"
+        android:inputType="number"
+        android:defaultValue="10"
+        android:title="显示时间" />
+
     <Preference
         android:key="tilePosition"
         android:title="修改磁贴位置" />
@@ -42,7 +49,7 @@
 
     <Preference
         android:key="about"
-        android:summary="开发者：LingC"
+        android:summary="开发者：LingC\n修改：mubbh"
         android:title="关于" />
 
 </PreferenceScreen>

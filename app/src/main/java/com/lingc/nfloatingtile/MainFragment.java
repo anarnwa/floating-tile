@@ -81,13 +81,20 @@ public class MainFragment extends PreferenceFragmentCompat {
                 }
                 FloatingTile floatingTile = new FloatingTile();
                 floatingTile.setContent(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher),
-                        "Title", "Message", getContext().getPackageName(), null);
+                        "Title", "Message123456789qwertyuiop[]asdfghjkl;'zxcvbnm,./'", getContext().getPackageName(), null);
                 floatingTile.setLastTile(TileObject.lastFloatingTile);
                 floatingTile.showWindow(getContext());
                 return false;
             }
         });
         findPreference("tileShowNum").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                TileObject.clearAllTile();
+                return false;
+            }
+        });
+        findPreference("tileShowTime").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
                 TileObject.clearAllTile();
@@ -125,6 +132,7 @@ public class MainFragment extends PreferenceFragmentCompat {
                         .setTitle("关于 - " + getString(R.string.app_name))
                         .setMessage("版本：" + BuildConfig.VERSION_NAME + " (" + BuildConfig.VERSION_CODE + ")" +
                                 "\n开发者：LingC" +
+                                "\n修改：mubbh"+
                                 "\n编译日期：" + BuildConfig.releaseTime)
                         .setPositiveButton("关闭", null)
                         .show();
