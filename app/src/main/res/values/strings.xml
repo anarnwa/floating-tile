@@ -10,5 +10,14 @@
         <item>up</item>
         <item>down</item>
     </string-array>
+    <string-array name="array_hide">
+        <item>不隐藏</item>
+        <item>隐藏</item>
+    </string-array>
+
+    <string-array name="array_hide_values">
+        <item>no</item>
+        <item>yes</item>
+    </string-array>
 
 </resources>
